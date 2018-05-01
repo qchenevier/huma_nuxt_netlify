@@ -11,8 +11,8 @@ var dynamicRoutes = getDynamicPaths({
 
 module.exports = {
   modules: [
-    'nuxt-buefy',
-  ]
+    'nuxt-buefy'
+  ],
   /*
   ** Headers of the page
   */
@@ -41,7 +41,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    vendor: ['vue-markdown']
+    vendor: ['vue-markdown'],
     /*
     ** Run ESLint on save
     */
