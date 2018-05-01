@@ -1,11 +1,11 @@
 <template>
   <div>
-    <nav class="navbar">
+    <nav class="navbar container">
 
       <div class="navbar-brand">
 
         <a href="http://huma.io">
-          <figure class="image is-96x96 huma_logo" href="http://huma.io" style="margin:8px">
+          <figure class="image is-96x96 huma_logo" href="http://huma.io">
             <img src="~/assets/huma_logo.svg"/>
           </figure>
         </a>
@@ -46,7 +46,9 @@
       </div>
     </section>
 
-    <nuxt/>
+    <div class="container">
+      <nuxt/>
+    </div>
 
   </div>
 </template>
@@ -60,4 +62,10 @@ export default {
 </script>
 
 <style>
+.huma_logo {
+  margin-top: 8px;
+  margin-right: 32px;
+  margin-bottom: 8px;
+  margin-left: 8px;
+}
 </style>
