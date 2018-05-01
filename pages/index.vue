@@ -22,6 +22,7 @@ export default {
     // Using webpacks context to gather all files from a folder
     const context = require.context('~/content/blog/posts/', false, /\.json$/);
 
+    // Posts URLs are based on json filenames without extension
     const posts = context.keys().map(key => ({
       ...context(key),
       _path: `/blog/${key.replace('.json', '').replace('./', '')}`
