@@ -3,21 +3,22 @@
     <nav class="navbar">
 
       <div class="navbar-brand">
+
         <a href="http://huma.io">
-          <figure class="image is-96x96" href="http://huma.io" style="margin:8px">
-            <img src="~/assets/huma_logo.svg" height=1/>
+          <figure class="image is-96x96 huma_logo" href="http://huma.io" style="margin:8px">
+            <img src="~/assets/huma_logo.svg"/>
           </figure>
         </a>
 
-        <!-- <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a> -->
+        <div class="navbar-burger" @click="showNav = !showNav" :class="{ 'is-active': showNav }"  style="height: 104px;">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
 
       </div>
 
-      <div class="navbar-menu is-active">
+      <div class="navbar-menu" :class="{ 'is-active': showNav }">
 
         <div class="navbar-start">
           <a class="navbar-item" href="http://huma.io">
@@ -31,7 +32,8 @@
       </div>
 
     </nav>
-    <div class="hero">
+
+    <section class="hero">
       <div class="hero-body">
         <div class="container">
           <h1 class="title">
@@ -42,7 +44,20 @@
           </h2>
         </div>
       </div>
-    </div>
+    </section>
+
     <nuxt/>
+
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return { showNav: false }
+  }
+};
+</script>
+
+<style>
+</style>
