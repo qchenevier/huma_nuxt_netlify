@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="navbar container">
+    <nav class="navbar container is-fixed-top">
 
       <div class="navbar-brand">
 
