@@ -4,9 +4,7 @@
       <div class="card">
         <div class="card-image">
           <figure class="image">
-            <img :src="`/img/${image}`">
-            <!-- <img :src="'/img/${post.image}'"> -->
-            <!-- <img src="~/assets/architecture_01.jpeg"> -->
+            <img :src="`${thumbnail}`">
           </figure>
         </div>
         <div class="card-content">
