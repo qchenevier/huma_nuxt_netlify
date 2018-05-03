@@ -1,12 +1,18 @@
 <template>
   <div>
-    <ul>
-      <li v-for="post in posts" :key="post.date">
-        <nuxt-link :to="post._path">
-          {{ post.title }}
-        </nuxt-link>
-      </li>
-    </ul>
+    <div class="columns is-multiline" v-for="post in posts" v-bind:key="post.date">
+      <div class="column is-4">
+        <div class="card" v-for="post in posts" v-bind:key="post.date">
+          <div class="card-image">
+            <img v-bind:src="post.thumbnail">
+          </div>
+          <div class="content">
+            <p class="title">{{ post.title }}</p>
+            <p class="subtitle">{{ post.summary }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
