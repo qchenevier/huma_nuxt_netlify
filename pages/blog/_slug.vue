@@ -1,22 +1,16 @@
 <template>
-  <article>
-    <div class="column is-9 is-offset-1">
-      <div class="card">
-        <div class="card-image">
-          <figure class="image">
-            <img :src="`${thumbnail}`">
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="content">
-            <p class="title">{{ title }}</p>
-            <vue-markdown> {{ body }} </vue-markdown>
-          </div>
-        </div>
-      </div>
-
+  <div class="columns is-multiline">
+    <div class="column is-5">
+      <figure class="image">
+        <img :src="`${thumbnail}`">
+      </figure>
+      <p class="title">{{ title }}</p>
+      <p class="subtitle">{{ summary }}</p>
     </div>
-  </article>
+    <div class="column is-7"  style="overflow:auto">
+      <vue-markdown> {{ body }} </vue-markdown>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -33,3 +27,9 @@ export default {
 };
 
 </script>
+
+<style>
+p.title, p.subtitle {
+  margin: 10px;
+}
+</style>
