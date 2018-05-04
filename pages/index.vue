@@ -2,13 +2,15 @@
   <div>
     <div class="columns is-multiline" v-for="post in posts" v-bind:key="post.date">
       <div class="column is-4">
-        <div class="card" v-for="post in posts" v-bind:key="post.date">
+        <div class="card" v-for="post in posts" :key="post.date">
           <div class="card-image">
-            <img v-bind:src="post.thumbnail">
+            <nuxt-link tag="img" :src="post.thumbnail" :to="post._path"></nuxt-link>
           </div>
-          <div class="content">
-            <p class="title">{{ post.title }}</p>
-            <p class="subtitle">{{ post.summary }}</p>
+          <div class="card-content">
+            <nuxt-link tag="div" class="content" :to="post._path">
+              <p class="title">{{ post.title }}</p>
+              <p class="subtitle">{{ post.summary }}</p>
+            </nuxt-link>
           </div>
         </div>
       </div>

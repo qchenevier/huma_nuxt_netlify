@@ -4,8 +4,8 @@
       <figure class="image">
         <img :src="`${thumbnail}`">
       </figure>
-      <p class="title">{{ title }}</p>
-      <p class="subtitle">{{ summary }}</p>
+      <p class="title" id="post-side">{{ title }}</p>
+      <p class="subtitle" id="post-side">{{ summary }}</p>
     </div>
     <div class="column is-7"  style="overflow:auto">
       <vue-markdown> {{ body }} </vue-markdown>
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style>
-p.title, p.subtitle {
-  margin: 10px;
+p.title#post-side, p.subtitle#post-side {
+  margin: 20px;
 }
 </style>
