@@ -3,11 +3,11 @@
 
     <div class="navbar-brand">
 
-      <a href="http://huma.io">
+      <a href="/">
         <figure
           :class="['image', imgClass]"
           :style="humaLogoStyle"
-          href="http://huma.io"
+          href="/"
         >
           <img src="~/assets/huma_logo.svg"/>
         </figure>
@@ -32,8 +32,7 @@
     >
 
       <div class="navbar-start">
-        <a class="navbar-item" href="http://huma.io"> Home </a>
-        <a class="navbar-item" href="http://huma.io"> Blog </a>
+        <a class="navbar-item" href="/"> Home </a>
       </div>
 
     </div>
