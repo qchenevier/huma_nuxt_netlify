@@ -1,20 +1,19 @@
 <template lang='pug'>
   div
-
-    div.hero
-      div.hero-body
-        div.container
+    .hero
+      .hero-body
+        .container
           h1.title HUMA
           h2.subtitle A blog about Humans & Machines
 
-    div.columns.is-multiline(v-for="post in posts" v-bind:key="post.date")
-      div.column.is-4
-        div.card(v-for="post in posts" :key="post.date")
+    .columns.is-multiline(v-for="post in posts" v-bind:key="post.date")
+      .column.is-4
+        .card(v-for="post in posts" :key="post.date")
           nuxt-link(:to="post._path")
-            div.card-image
+            .card-image
                img(:src="post.thumbnail")
-            div.card-content
-              div.content
+            .card-content
+              .content
                 p.title {{ post.title }}
                 p.subtitle {{ post.summary }}
 </template>
@@ -37,7 +36,7 @@ export default {
 </script>
 
 <style>
-div.card:hover {
+.card:hover {
   opacity: 0.8;
 }
 </style>

@@ -1,7 +1,7 @@
 <template lang='pug'>
   div
     huma-navbar
-    div.container
+    .container
       nuxt
 </template>
 

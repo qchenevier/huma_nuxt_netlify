@@ -1,6 +1,6 @@
 <template lang='pug'>
   navbar.navbar.container.is-fixed-top
-    div.navbar-brand
+    .navbar-brand
       a(href="/")
         figure(
           :class="['image', imgClass]"
@@ -8,7 +8,7 @@
           href="/"
         )
           img(src="~/assets/huma_logo.svg")
-      div.navbar-burger(
+      .navbar-burger(
         @click="showNav = !showNav"
         :class="{'is-active': showNav}"
         :style="{'height': burgerSize + 'px'}"
@@ -17,10 +17,10 @@
         span
         span
 
-    div.navbar-menu(
+    .navbar-menu(
       :class="{'is-active': showNav}"
     )
-      div.navbar-start
+      .navbar-start
         a.navbar-item(href="/") Home
 </template>
 

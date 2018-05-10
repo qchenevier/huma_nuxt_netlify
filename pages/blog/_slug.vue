@@ -1,11 +1,11 @@
 <template lang='pug'>
-  div.columns.is-multiline
-    div.column.is-5
+  .columns.is-multiline
+    .column.is-5
       figure.image
         img(:src="`${thumbnail}`")
       p#post-side.title {{ title }}
       p#post-side.subtitle {{ summary }}
-    div.column.is-7(style="overflow:auto")
+    .column.is-7(style="overflow:auto")
       vue-markdown {{ body }}
 </template>
 
