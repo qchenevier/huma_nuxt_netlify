@@ -1,5 +1,19 @@
 <template>
   <div>
+
+    <div class="hero">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            HUMA
+          </h1>
+          <h2 class="subtitle">
+            A blog about Humans & Machines
+          </h2>
+        </div>
+      </div>
+    </div>
+
     <div class="columns is-multiline" v-for="post in posts" v-bind:key="post.date">
       <div class="column is-4">
         <div class="card" v-for="post in posts" :key="post.date">
@@ -15,6 +29,7 @@
         </div>
       </div>
     </div>
+
   </div>
 </template>
 
