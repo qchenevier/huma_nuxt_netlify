@@ -49,3 +49,9 @@ export default {
   }
 };
 </script>
+
+<style>
+div.card:hover {
+  opacity: 0.7;
+}
+</style>
