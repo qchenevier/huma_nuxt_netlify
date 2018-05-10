@@ -4,7 +4,11 @@
     <div class="navbar-brand">
 
       <a href="http://huma.io">
-        <figure class="image is-96x96 huma_logo" href="http://huma.io">
+        <figure
+          :class="['image', imgClass]"
+          :style="humaLogoStyle"
+          href="http://huma.io"
+        >
           <img src="~/assets/huma_logo.svg"/>
         </figure>
       </a>
@@ -13,7 +17,7 @@
         class="navbar-burger"
         @click="showNav = !showNav"
         :class="{'is-active': showNav}"
-        style="height: 104px;"
+        :style="{'height': burgerSize + 'px'}"
       >
         <span></span>
         <span></span>
@@ -39,27 +43,34 @@
 
 
 <script>
+var logoSize = 96 // choose a value in this list (available in bulma classes): 16, 24, 32, 48, 64, 96, 128
+
+var marginSize = logoSize / 12
+var navbarSize = logoSize + 2 * marginSize
+
 export default {
   data () {
-    return { showNav: false }
+    return {
+      showNav: false,
+      logoSize: logoSize,
+      marginSize: marginSize,
+      burgerSize: navbarSize,
+      imgClass: 'is-' + logoSize + 'x' + logoSize,
+      humaLogoStyle: {
+        'margin-top': marginSize + 'px',
+        'margin-right': 4 * marginSize + 'px',
+        'margin-bottom': marginSize + 'px',
+        'margin-left': marginSize + 'px'
+      }
+    }
   },
   head: {
       htmlAttrs: {
-        class: "has-navbar-fixed-top"
+        style: 'padding-top: ' + (navbarSize + 1) + 'px'
       }
   }
 };
 </script>
 
 <style>
-html.has-navbar-fixed-top {
-    padding-top: 113px;
-}
-
-.huma_logo {
-  margin-top: 8px;
-  margin-right: 32px;
-  margin-bottom: 8px;
-  margin-left: 8px;
-}
 </style>
