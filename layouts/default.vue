@@ -1,13 +1,8 @@
-<template>
-  <div>
-
-    <huma-navbar/>
-
-    <div class="container">
-      <nuxt/>
-    </div>
-
-  </div>
+<template lang='pug'>
+  div
+    huma-navbar
+    div.container
+      nuxt
 </template>
 
 <script>

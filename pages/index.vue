@@ -1,38 +1,22 @@
-<template>
-  <div>
+<template lang='pug'>
+  div
 
-    <div class="hero">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title">
-            HUMA
-          </h1>
-          <h2 class="subtitle">
-            A blog about Humans & Machines
-          </h2>
-        </div>
-      </div>
-    </div>
+    div.hero
+      div.hero-body
+        div.container
+          h1.title HUMA
+          h2.subtitle A blog about Humans & Machines
 
-    <div class="columns is-multiline" v-for="post in posts" v-bind:key="post.date">
-      <div class="column is-4">
-        <div class="card" v-for="post in posts" :key="post.date">
-          <nuxt-link :to="post._path">
-            <div class="card-image">
-                 <img :src="post.thumbnail"/>
-            </div>
-            <div class="card-content">
-              <div class="content">
-                <p class="title">{{ post.title }}</p>
-                <p class="subtitle">{{ post.summary }}</p>
-              </div>
-            </div>
-          </nuxt-link>
-        </div>
-      </div>
-    </div>
-
-  </div>
+    div.columns.is-multiline(v-for="post in posts" v-bind:key="post.date")
+      div.column.is-4
+        div.card(v-for="post in posts" :key="post.date")
+          nuxt-link(:to="post._path")
+            div.card-image
+               img(:src="post.thumbnail")
+            div.card-content
+              div.content
+                p.title {{ post.title }}
+                p.subtitle {{ post.summary }}
 </template>
 
 <script>

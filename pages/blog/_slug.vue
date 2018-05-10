@@ -1,16 +1,12 @@
-<template>
-  <div class="columns is-multiline">
-    <div class="column is-5">
-      <figure class="image">
-        <img :src="`${thumbnail}`">
-      </figure>
-      <p class="title" id="post-side">{{ title }}</p>
-      <p class="subtitle" id="post-side">{{ summary }}</p>
-    </div>
-    <div class="column is-7"  style="overflow:auto">
-      <vue-markdown> {{ body }} </vue-markdown>
-    </div>
-  </div>
+<template lang='pug'>
+  div.columns.is-multiline
+    div.column.is-5
+      figure.image
+        img(:src="`${thumbnail}`")
+      p#post-side.title {{ title }}
+      p#post-side.subtitle {{ summary }}
+    div.column.is-7(style="overflow:auto")
+      vue-markdown {{ body }}
 </template>
 
 <script>
@@ -29,7 +25,7 @@ export default {
 </script>
 
 <style>
-p.title#post-side, p.subtitle#post-side {
+p#post-side {
   margin: 20px;
 }
 </style>

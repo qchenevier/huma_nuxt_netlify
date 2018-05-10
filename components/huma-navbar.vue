@@ -1,43 +1,27 @@
-<template>
-  <navbar class="navbar container is-fixed-top">
-
-    <div class="navbar-brand">
-
-      <a href="/">
-        <figure
+<template lang='pug'>
+  navbar.navbar.container.is-fixed-top
+    div.navbar-brand
+      a(href="/")
+        figure(
           :class="['image', imgClass]"
           :style="humaLogoStyle"
           href="/"
-        >
-          <img src="~/assets/huma_logo.svg"/>
-        </figure>
-      </a>
-
-      <div
-        class="navbar-burger"
+        )
+          img(src="~/assets/huma_logo.svg")
+      div.navbar-burger(
         @click="showNav = !showNav"
         :class="{'is-active': showNav}"
         :style="{'height': burgerSize + 'px'}"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      )
+        span
+        span
+        span
 
-    </div>
-
-    <div
-      class="navbar-menu"
+    div.navbar-menu(
       :class="{'is-active': showNav}"
-    >
-
-      <div class="navbar-start">
-        <a class="navbar-item" href="/"> Home </a>
-      </div>
-
-    </div>
-
-  </navbar>
+    )
+      div.navbar-start
+        a.navbar-item(href="/") Home
 </template>
 
 
