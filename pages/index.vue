@@ -36,6 +36,10 @@ export default {
 </script>
 
 <style>
+.card {
+  margin: 10px;
+}
+
 .card:hover {
   opacity: 0.8;
 }
