@@ -6,20 +6,18 @@
           h1.title HUMA
           h2.subtitle A blog about Humans & Machines
 
-    .columns.is-multiline(v-for="post in posts" v-bind:key="post.date")
-      .column.is-4
-        .card(v-for="post in posts" :key="post.date")
-          nuxt-link(:to="post._path")
-            .card-image
-               img(:src="post.thumbnail")
-            .card-content
-              .content
-                p.title {{ post.title }}
-                p.subtitle {{ post.summary }}
+    .columns.is-multiline.is-gapless
+      .column.is-4(v-for="post in posts" :key="post.date")
+        huma-post-card(:post="post")
 </template>
 
 <script>
+import HumaPostCard from '~/components/huma-post-card.vue'
+
 export default {
+  components: {
+    HumaPostCard
+  },
   data() {
     // Using webpacks context to gather all files from a folder
     const context = require.context('~/content/blog/posts/', false, /\.json$/);
@@ -29,18 +27,13 @@ export default {
       ...context(key),
       _path: `/blog/${key.replace('.json', '').replace('./', '')}`
     }));
-
     return { posts };
   }
 };
 </script>
 
-<style>
-.card {
+<style scoped>
+.columns {
   margin: 10px;
-}
-
-.card:hover {
-  opacity: 0.8;
 }
 </style>
