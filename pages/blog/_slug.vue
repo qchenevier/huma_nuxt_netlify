@@ -1,14 +1,14 @@
 <template lang='pug'>
   .columns.is-multiline.is-centered
     .column.is-5
-      #post-side.image
+      .image.post-side
         img(:src="`${post.thumbnail}`")
-      p#post-side.title {{ post.title }}
-      p#post-side.subtitle {{ post.summary }}
+      p.title.post-side {{ post.title }}
+      p.subtitle.post-side {{ post.summary }}
     .column.is-7
-      vue-markdown#post {{ post.body }}
-    .column.is-7
-      vue-disqus#comments(
+      vue-markdown.post {{ post.body }}
+    .column.is-10
+      vue-disqus.comments(
         :shortname="disqusShortname"
         :identifier="disqusPageId"
         :url="disqusURL"
@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style>
-#post-side, #post, #comments {
+.post-side, .post, .comments {
   margin: 10px;
 }
 </style>
