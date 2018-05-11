@@ -3,7 +3,7 @@
     .column.is-4
       huma-post-card.post-side(:post="post")
     .column.is-8
-      vue-markdown.post {{ post.body }}
+      vue-markdown.post.content.is-medium {{ post.body }}
     .column.is-10
       vue-disqus.comments(
         :shortname="disqusShortname"
