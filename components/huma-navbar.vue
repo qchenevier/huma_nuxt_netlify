@@ -1,5 +1,5 @@
 <template lang='pug'>
-  navbar.navbar.container.is-fixed-top
+  nav.navbar.container.is-fixed-top
     .navbar-brand
       a(href="/")
         figure(
