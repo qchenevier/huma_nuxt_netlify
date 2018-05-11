@@ -2,7 +2,7 @@
   .columns.is-multiline.is-centered
     .column.is-5
       .image.post-side
-        img(:src="`${post.thumbnail}`")
+        img(:src="post.thumbnail")
       p.title.post-side {{ post.title }}
       p.subtitle.post-side {{ post.summary }}
     .column.is-7
