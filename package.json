@@ -16,6 +16,7 @@
   "dependencies": {
     "nuxt": "^1.0.0",
     "nuxt-buefy": "0.0.4",
+    "vue-disqus": "^3.0.3",
     "vue-markdown": "^2.2.4"
   },
   "devDependencies": {

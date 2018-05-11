@@ -13,6 +13,12 @@ module.exports = {
   modules: [
     'nuxt-buefy'
   ],
+  plugins: [
+    '~/plugins/disqus'
+  ],
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+  },
   /*
   ** Headers of the page
   */
@@ -41,7 +47,10 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    vendor: ['vue-markdown'],
+    vendor: [
+      'vue-markdown',
+      'vue-disqus'
+    ],
     /*
     ** Run ESLint on save
     */
