@@ -49,7 +49,9 @@ module.exports = {
   build: {
     vendor: [
       'vue-markdown',
-      'vue-disqus'
+      'vue-disqus',
+      'reading-time',
+      'moment',
     ],
     /*
     ** Run ESLint on save

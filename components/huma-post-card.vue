@@ -7,11 +7,23 @@
         .content
           p.title {{ post.title }}
           p.subtitle {{ post.summary }}
+          p {{ reading_time.text }} | {{ pretty_date }}
 </template>
 
 <script>
+import readingTime from 'reading-time'
+import moment from 'moment'
+
 export default {
-  props: ['post']
+  props: ['post'],
+  data () {
+    let reading_time = readingTime(this.post.body)
+    let pretty_date = moment(this.post.date).format("MMMM YYYY")
+    return {
+      reading_time: reading_time,
+      pretty_date: pretty_date
+    }
+  }
 };
 </script>
 

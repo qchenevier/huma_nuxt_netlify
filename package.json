@@ -14,8 +14,10 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "moment": "^2.22.2",
     "nuxt": "^1.0.0",
     "nuxt-buefy": "0.0.4",
+    "reading-time": "^1.1.2",
     "vue-disqus": "^3.0.3",
     "vue-markdown": "^2.2.4"
   },
