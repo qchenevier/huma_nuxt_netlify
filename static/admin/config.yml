@@ -16,14 +16,14 @@ collections:
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
       - {label: "Summary", name: "summary", widget: "markdown"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - label: "Tags"
-        name: "tags"
+      - label: "Related Tags"
+        name: "related_tags"
         widget: "relation"
         required: false
         collection: "tags"
         searchFields: ["tag"]
         valueFields: ["tag"]
-  
+
   - name: "tags" # Used in routes
     label: "Tags" # Used in the UI
     folder: "content/blog/tags"
