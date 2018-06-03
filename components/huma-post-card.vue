@@ -1,18 +1,21 @@
 <template lang='pug'>
   .card
-    nuxt-link(:to="post._path")
+    nuxt-link.has-text-dark(:to="post._path")
       .card-image
          img(:src="post.thumbnail")
       .card-content
         .content(v-if="post.tags")
-          b-taglist(grouped, group-multiline)
-            b-tag(v-for="tag in post.tags", :key="tag.tag")
-              b-icon(size="is-small", :icon="tag.icon")
-              | &nbsp {{ tag.tag }}
+          b-taglist
+            nuxt-link(tag="b-tag", v-for="tag in post.tags", :key="tag.tag", :to="tag_href(tag)", @click.stop="handleArrow")
+              a.has-text-dark
+                b-icon(size="is-small", :icon="tag.icon")
+                | &nbsp {{ tag.tag }}
         .content
           p.title {{ post.title }}
           p.subtitle {{ post.summary }}
-          p {{ reading_time.text }} | {{ pretty_date }}
+      .card-footer
+        .card-footer-item {{ reading_time.text }}
+        .card-footer-item {{ pretty_date }}
 </template>
 
 <script>
@@ -27,6 +30,11 @@ export default {
     return {
       reading_time: reading_time,
       pretty_date: pretty_date
+    }
+  },
+  methods: {
+    tag_href(tag) {
+      return "/tags/" + tag.tag.replace(/\s+/g, '-').toLowerCase()
     }
   }
 };
