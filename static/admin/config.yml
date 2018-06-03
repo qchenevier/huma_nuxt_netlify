@@ -18,7 +18,7 @@ collections:
         required: false
         collection: "tags"
         searchFields: ["title"]
-        valueFields: ["title"]
+        valueField: "title"
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
       - {label: "Summary", name: "summary", widget: "markdown"}
