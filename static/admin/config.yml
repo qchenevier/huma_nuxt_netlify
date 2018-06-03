@@ -14,11 +14,14 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - label: "Tags"
         name: "tags"
-        widget: "relation"
-        required: false
-        collection: "tags"
-        searchFields: ["title"]
-        valueField: "title"
+        widget: "list"
+        allow_add: false
+        fields:
+          - {label: "Tag", name: "tag", widget: "string"}
+          - {label: "icon", name: "icon", widget: "string"}
+        default:
+          - {tag: "Digitalization", icon: "blur"}
+          - {tag: "Organisations", icon: "vector-triangle"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
       - {label: "Summary", name: "summary", widget: "markdown"}
