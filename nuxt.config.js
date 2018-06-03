@@ -53,6 +53,7 @@ module.exports = {
       'vue-disqus',
       'reading-time',
       'moment',
+      'underscore'
     ],
     /*
     ** Run ESLint on save

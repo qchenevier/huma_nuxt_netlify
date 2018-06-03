@@ -7,12 +7,13 @@
           h2.subtitle A blog about Humans & Machines
 
     .columns.is-multiline.is-gapless
-      .column.is-4(v-for="post in posts" :key="post.date")
+      .column.is-4(v-for="post in sort_posts(posts, 'date').reverse()" :key="post.date")
         huma-post-card(:post="post")
 </template>
 
 <script>
 import HumaPostCard from '~/components/huma-post-card.vue'
+import _ from 'underscore'
 
 export default {
   components: {
@@ -28,6 +29,11 @@ export default {
       _path: `/blog/${key.replace('.json', '').replace('./', '')}`
     }));
     return { posts };
+  },
+  methods: {
+    sort_posts(posts, sortKey) {
+      return _.sortBy(posts, sortKey)
+    }
   }
 };
 </script>

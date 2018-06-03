@@ -19,6 +19,7 @@
     "nuxt": "^1.0.0",
     "nuxt-buefy": "0.0.4",
     "reading-time": "^1.1.2",
+    "underscore": "^1.9.1",
     "vue-disqus": "^3.0.3",
     "vue-markdown": "^2.2.4"
   },
