@@ -19,7 +19,13 @@ collections:
           - {label: "Tag", name: "tag", widget: "string"}
           - {label: "icon", name: "icon", widget: "string"}
         default:
+          - {tag: "Business", icon: "domain"}
+          - {tag: "Coding", icon: "code-braces"}
+          - {tag: "Data Science", icon: "chart-bubble"}
           - {tag: "Digitalization", icon: "blur"}
+          - {tag: "Humans", icon: "account"}
+          - {tag: "Machines", icon: "robot"}
+          - {tag: "Management", icon: "account-multiple"}
           - {tag: "Organisations", icon: "vector-triangle"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
