@@ -15,7 +15,6 @@ collections:
       - label: "Tags"
         name: "tags"
         widget: "list"
-        allow_add: false
         fields:
           - {label: "Tag", name: "tag", widget: "string"}
           - {label: "icon", name: "icon", widget: "string"}
