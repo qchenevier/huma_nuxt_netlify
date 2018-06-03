@@ -16,13 +16,13 @@ collections:
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
       - {label: "Summary", name: "summary", widget: "markdown"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - label: "Related Tags"
-        name: "related_tags"
+      - label: "Tags"
+        name: "tags"
         widget: "relation"
         required: false
         collection: "tags"
-        searchFields: ["tag"]
-        valueFields: ["tag"]
+        searchFields: ["title"]
+        valueFields: ["title"]
 
   - name: "tags" # Used in routes
     label: "Tags" # Used in the UI
@@ -31,6 +31,6 @@ collections:
     slug: "{{slug}}" # Filename template
     format: 'json'
     fields:
-      - {label: "Tag", name: "tag", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
       - {label: "Icon", name: "icon", widget: "string", required: false}
       - {label: "Color", name: "color", widget: "string", required: false}
