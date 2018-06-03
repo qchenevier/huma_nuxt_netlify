@@ -11,7 +11,8 @@ var dynamicRoutes = getDynamicPaths({
 
 module.exports = {
   modules: [
-    'nuxt-buefy'
+    'nuxt-buefy',
+    ['@nuxtjs/google-analytics', {id: 'UA-120260275-1'}]
   ],
   plugins: [
     '~/plugins/disqus'
