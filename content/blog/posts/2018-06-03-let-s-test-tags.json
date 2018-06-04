@@ -2,26 +2,6 @@
   "title": "Let's test tags",
   "tags": [
     {
-      "tag": "Business",
-      "icon": "domain"
-    },
-    {
-      "tag": "Coding",
-      "icon": "code-braces"
-    },
-    {
-      "tag": "Data Science",
-      "icon": "chart-bubble"
-    },
-    {
-      "tag": "Digitalization",
-      "icon": "blur"
-    },
-    {
-      "tag": "Humans",
-      "icon": "account"
-    },
-    {
       "tag": "Machines",
       "icon": "robot"
     },
