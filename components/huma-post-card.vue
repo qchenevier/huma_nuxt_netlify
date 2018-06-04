@@ -1,21 +1,20 @@
 <template lang='pug'>
-  .card
-    nuxt-link.has-text-dark(:to="post._path")
-      .card-image
-         img(:src="post.thumbnail")
-      .card-content
-        .content(v-if="post.tags")
-          b-taglist
-            nuxt-link(tag="b-tag", v-for="tag in post.tags", :key="tag.tag", :to="tag_href(tag)", @click.stop="handleArrow")
-              a.has-text-dark
-                b-icon(size="is-small", :icon="tag.icon")
-                | &nbsp {{ tag.tag }}
-        .content
-          p.title {{ post.title }}
-          p.subtitle {{ post.summary }}
-      .card-footer
-        .card-footer-item {{ reading_time.text }}
-        .card-footer-item {{ pretty_date }}
+  nuxt-link.has-text-dark(class="card", tag="div", :to="post._path")
+    .card-image
+       img(:src="post.thumbnail")
+    .card-content
+      .content(v-if="post.tags")
+        b-taglist
+          nuxt-link(tag="b-tag", v-for="tag in post.tags", :key="tag.tag", :to="tag_href(tag)", @click.stop="handleArrow")
+            a.has-text-dark
+              b-icon(size="is-small", :icon="tag.icon")
+              | &nbsp {{ tag.tag }}
+      .content
+        p.title {{ post.title }}
+        p.subtitle {{ post.summary }}
+    .card-footer
+      .card-footer-item {{ reading_time.text }}
+      .card-footer-item {{ pretty_date }}
 </template>
 
 <script>
