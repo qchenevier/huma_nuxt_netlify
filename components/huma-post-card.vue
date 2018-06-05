@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     tag_href(tag) {
-      return "/tags/" + tag.tag.replace(/\s+/g, '-').toLowerCase()
+      return "/?tags=" + tag.tag.replace(/\s+/g, '-').toLowerCase()
     }
   }
 };

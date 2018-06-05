@@ -5,41 +5,83 @@
         .container
           h1.title HUMA
           h2.subtitle A blog about Humans & Machines
-
-    .columns.is-multiline.is-gapless
-      .column.is-4(v-for="post in sort_posts(posts, 'date').reverse()" :key="post.date")
-        huma-post-card(:post="post")
+          b-field
+            b-taginput(
+              v-model="selected_tags"
+              :data="filtered_tags"
+              autocomplete
+              field="tag"
+              attached
+              open-on-focus=true
+              placeholder="Select topic"
+              @typing="get_filtered_tags"
+            )
+              template(slot-scope="props")
+                b-icon(size="is-small", :icon="props.option.icon")
+                | &nbsp {{ props.option.tag }}
+              template(slot="empty") No suggestion
+    huma-post-list(:posts="sort_and_filter_posts(posts, 'date', selected_tags).reverse()")
 </template>
 
 <script>
-import HumaPostCard from '~/components/huma-post-card.vue'
+import HumaPostList from '~/components/huma-post-list.vue'
 import _ from 'underscore'
 
 export default {
   components: {
-    HumaPostCard
+    HumaPostList
   },
   data() {
     // Using webpacks context to gather all files from a folder
     const context = require.context('~/content/blog/posts/', false, /\.json$/);
-
     // Posts URLs are based on json filenames without extension
     const posts = context.keys().map(key => ({
       ...context(key),
       _path: `/blog/${key.replace('.json', '').replace('./', '')}`
     }));
-    return { posts };
+
+    function get_unique(items) {
+      return Array.from(new Set(items))
+    }
+
+    const available_tags = get_unique(
+      _.flatten(
+        posts
+        .filter(post => post.tags != null)
+        .map(post => post.tags)
+      )
+    )
+
+    return {
+      posts: posts,
+      available_tags: available_tags,
+      filtered_tags: available_tags,
+      selected_tags: []
+    }
   },
   methods: {
-    sort_posts(posts, sortKey) {
-      return _.sortBy(posts, sortKey)
+    get_filtered_tags(text) {
+      this.filtered_tags = this.available_tags.filter((option) => {
+        return option.tag
+          .toLowerCase()
+          .indexOf(text.toLowerCase()) >= 0
+      })
+    },
+    sort_and_filter_posts(posts, sortKey, selected_tags) {
+      if (selected_tags.length > 0) {
+        var filtered_posts = (
+          posts
+          .filter(post => (post.tags != null))
+          .filter(post => selected_tags.every(tag => post.tags.indexOf(tag) !== -1))
+        )
+        return _.sortBy(filtered_posts, sortKey)
+      } else {
+        return _.sortBy(posts, sortKey)
+      }
     }
   }
 };
 </script>
 
 <style scoped>
-.columns {
-  margin: 10px;
-}
 </style>
