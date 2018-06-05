@@ -3,7 +3,7 @@
     .card-image
        img(:src="post.thumbnail")
     .card-content
-      .content(v-if="post.tags")
+      .content(v-if="post.tags.length > 0")
         b-taglist
           nuxt-link(tag="b-tag", v-for="tag in post.tags", :key="tag.tag", :to="tag_href(tag)", @click.stop="handleArrow")
             a.has-text-dark
