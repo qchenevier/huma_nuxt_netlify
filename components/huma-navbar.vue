@@ -24,7 +24,7 @@
         a.navbar-item(href="/")
           b-icon(icon="file-document-box")
           | &nbsp Blog
-        a.navbar-item(href="/blog/2018-06-02-hi-i-write-this-blog/")
+        a.navbar-item(href="/blog/about")
           b-icon(icon="comment-account")
           | &nbsp About
 </template>
