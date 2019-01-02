@@ -1,7 +1,7 @@
 {
   "name": "huma_nuxt_netlify",
   "version": "1.0.0",
-  "description": "Nuxt.js + Netlify CMS project",
+  "description": "A blog about Humans & Machines",
   "author": "qchenevier <qchenevier@users.noreply.github.com>",
   "private": true,
   "scripts": {
