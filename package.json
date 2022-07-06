@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@nuxtjs/google-analytics": "^2.0.2",
-    "moment": "^2.23.0",
+    "moment": "^2.29.4",
     "nuxt": "^2.3.4",
     "nuxt-buefy": "0.3.2",
     "pug-plain-loader": "^1.0.0",
